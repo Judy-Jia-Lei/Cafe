@@ -1,0 +1,537 @@
+
+<!doctype html>
+
+<html>
+
+    <head>
+        
+        <title>Jia's Cafe</title>
+    
+        <meta name="viewport" content="width=device-width initial-scale=1.0">
+        <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <style>
+            
+            * {box-sizing:border-box}
+            
+            body,html {
+                
+                height:100%;
+                margin:0;
+                padding:0;
+                font-family:"Inconsolata", sans-serif;
+            }
+            
+            .top {
+                
+                position:fixed;
+                z-index:1;
+                width:100%;
+                
+            }
+            
+            .bgimg {background-image:url(cafe_image/coffee%20shop%2004.jpg);background-position:center;background-size:cover;min-height:85%;}
+            .bgimg1 {background-image:url(cafe_image/breakfast%2006.jpg);border-radius:4px;background-position:center;background-size:cover;}
+            .bgimg2 {background-image:url(cafe_image/breakfast%2005.jpg);border-radius:4px;background-position:center;background-size:cover;}
+            .bgimg3 {background-image:url(cafe_image/breakfast%2007.jpg);border-radius:4px;background-position:center;background-size:cover;}
+            .bgimg4 {background-image:url(cafe_image/breakfast%2008.jpg);border-radius:4px;background-position:center;background-size:cover;}
+            .bgimg5 {background-image:url(cafe_image/breakfast%2009.jpg);border-radius:4px;background-position:center;background-size:cover;}
+            .bgimg6 {background-image:url(cafe_image/breakfast%2003.jpg);border-radius:4px;background-position:center;background-size:cover;}
+            
+            .bgimg7 {background-image:url(cafe_image/food%2001.jpg);border-radius:4px;background-position:center;background-size:cover;}
+            .bgimg8 {background-image:url(cafe_image/food%2003.jpg);border-radius:4px;background-position:center;background-size:cover;}
+            .bgimg9 {background-image:url(cafe_image/food%2006.jpg);border-radius:4px;background-position:center;background-size:cover;}
+            .bgimg10 {background-image:url(cafe_image/food%2005.jpg);border-radius:4px;background-position:center;background-size:cover;}
+            .bgimg11 {background-image:url(cafe_image/food%20020.jpg);border-radius:4px;background-position:center;background-size:cover;}
+            .bgimg12 {background-image:url(cafe_image/food%2007.jpg);border-radius:4px;background-position:center;background-size:cover;}
+            
+            .padding {padding:8px 16px}
+            .padding-large {padding:12px 24px}
+            .padding-24 {padding:24px 24px 24px 24px}
+            .padding-64 {padding-top:64px;padding-bottom:64px}
+            .padding-48 {padding-top:48px!important;padding-bottom:48px!important}
+            .padding-bottom {padding-bottom:24px!important}
+            .padding-top {padding-top:6px}
+            
+            .black {color:#fff;background-color:#000}
+            .black-color {color:#fff}
+            .black-color-hover:hover {color:#000}
+            .white,hover-white:hover {color:#fff}
+            
+            .col {float:left;width:100%}
+            .col2 {float:left;width:31.33%;}
+            .col.s3 {width:24.9999%}
+            .col.s6 {width:50%}
+            
+            /*footer*/
+            
+            .button2:hover{color:#000;background-color:#ccc;}
+            .button2 {border:none;display:inline-block;color:white;background-color:black;padding:8px 16px;cursor:pointer;text-decoration:none;}
+            .transition {transition:background 0.45s ease-in-out}
+            .hover-opacity-off:hover {opacity:1}
+            .padding-bottom-64{padding-bottom:64px;}
+            .hover-opacity:hover{opacity:0.7}
+            
+            
+            .button {text-decoration:none;width:100%;display:inline-block;vertical-align: middle;border:none;text-align: center;cursor:pointer;white-space: nowrap;overflow:hidden;}
+            
+            .border {border:1px solid red}
+            
+            .row:before,row:after {clear:both;display:table;content:""}
+            
+            .display-container {position:relative}
+            
+            .grayscale-half{ filter:grayscale(50%)}
+            
+            .display-bottomleft {position:absolute;left:0;bottom:0;}
+            .display-bottomright {position:absolute;right:0;bottom:0;}
+            
+            .display-middle {position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%)}
+            
+            .clear {clear:both}
+            
+            .center {text-align: center;}
+            .center2 {display:table;margin:0 auto}
+            
+            .tag {padding:6px 8px;display:inline-block;}
+            
+            .letterspacing {letter-spacing: 1px}
+            .letterspacing-large {letter-spacing:4px}
+            
+            .sand {color:#000;background-color:#fdf5e6}
+            
+            .large{font-size:18px}
+            .xlarge{font-size:24px}
+            .xxlarge{font-size:30px}
+            .xxxlarge{font-size:36px}
+            
+            .container {padding:0.01em 16px;text-align: center;}
+            .container:before,.container:after,.panel:before,.panel:after,row:beofre,row:after {clear:both;content:"";display:table}
+            .content {max-width:1200px;margin:auto}
+            .margin-16 {margin-top:16px;margin-bottom:16px}
+            .leftbar {border-left:6px solid #ccc}
+            .light-gray {color:#000;background-color:#f1f1f1}
+            .margin-top-16 {margin-top:16px}
+            
+            
+            .card {box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12)!important}
+            .text-grey {color:#757575}
+            .menu {display:block}
+            .dark-grey {color:black;background-color:#616161;}
+            
+            .hover-dark-grey:hover {color:black;background-color:#616161;}
+            .hover-light-grey:hover {color:black;background-color:#CCCCCC}
+            
+            #buttonDrink, #buttonEat:hover { color:black; }
+            
+            .border {border:1px solid black}
+            .radius {border-radius: 4px!important}
+            .radius-2 {border-radius: 10px!important}
+            .opacity {opacity:0.8}
+            .opacity-hover: hover {opacity:1.0 !important}
+            
+            .hide {display:none}
+            
+            .cursor {cursor:pointer}
+            
+            .vertical-middle {vertical-align: middle}
+            .display-talbe {display:table-cell;}
+            
+            
+            
+            .m3 {width:32%;height:260px;float:left}
+            
+            /* address + google map*/
+            
+            .m4 {width:32%}
+            .m8 {width:65%}
+            .greyscale {filter: grayscale(30%)}
+            .margin-100{margin-top:100px}
+            .margin-70 {margin-top:70px}
+            .margin-bottom-16 {margin-bottom:16px}
+            
+            .row-margin {margin:5px 4px}
+            
+            .content-background-color {background-color: #FFFBF3}
+            
+            .hidden-caption {display:none;position:relative;top:50%;left;50%;transform:translate(+25%,-60%);font-weight:bolder;letter-spacing: 1px}
+            .middleLeft {transform:translate(+25%,-60%);}
+            .hidden-caption-hover:hover .hidden-caption {display:block;cursor:pointer;}
+            .hidden-caption-hover:hover {opacity:0.7}
+            
+            
+            #hidden-menuPictures {display:none}
+            
+            
+            
+            @media (max-width:870px) {.col3 {width:100%;float:left;margin:5px 0px;text-align: center;}
+            
+            
+        </style>
+        
+    </head>
+
+    <body>
+        
+        <!--
+        1.加了margin，怎么计算宽度？
+        2.loadmore fucntion不工作？
+        3.怎么把一个div放在页面中间
+        4.top bar缩小以后标题不在正中间
+        5.book a table跳出一个小的窗口
+        -->
+
+        <!--Navbar (sit on top)-->
+        
+        <div class="top">
+        
+            <div class="row black center" style="height:42px">
+            
+                <div class="col s3 black hover-light-grey radius" style="font-size:15px;height:30px;margin:6px 0px">
+                    <a href="index.html" class="button black-color black-color-hover padding-top">HOME</a>
+                </div>
+                
+                <div class="col s3 black hover-light-grey radius" style="font-size:15px;height:30px;margin:6px 0px">
+                    <a href="#menu" class="button black-color black-color-hover padding-top">MENU</a>
+                </div>
+                <div class="col s3 black hover-light-grey radius" style="font-size:15px;height:30px;margin:6px 0px">
+                    <a href="https://www.bookatable.co.uk/manchester-restaurants" class="button black-color black-color-hover padding-top">BOOK</a>
+                </div>
+                
+                <div class="col s3 black hover-light-grey radius" style="font-size:15px;height:30px;margin:6px 0px">
+                    <a href="https://deliveroo.co.uk/" class="button black-color black-color-hover padding-top">DELIVERY</a>
+                </div>
+               
+            </div>
+         
+        </div>
+
+        <!--Header with image-->
+        
+        <header class="bgimg display-container grayscale-half" id="home">
+        
+            <div class="display-bottomleft center padding-large opacity-hover">
+                <span class="tag black letterspacing radius opacity">Open from 6am to 9pm</span>
+            </div>
+            
+            <div class="display-bottomright center padding-large">
+                <span class="tag black letterspacing radius opacity">Oxford Road, No.50</span>
+            </div>
+            
+            
+            <div class="display-middle center">
+                <span class="tag white letterspacing" style="font-size: 60px">Jia <br>Cafe</span>
+            </div>
+            
+        </header>
+        
+        <div class="content-background-color">
+            
+            <!--Add a background color to the whole page-->
+            <div class="container padding-bottom" id="about">
+                
+                <div class="content" style="max-width:700px">
+                    <h5 class="center padding-24"><span class="tag black center letterspacing-large radius">ABOUT THE CAFE</span></h5>
+                    <p>Jia Cafe was founded in Manchester by Jia. <br>In addition to the full espresso and brew bar menu, we serve fresh made-to-order breakfast and lunch sandwiches, as well as a selection of sides and salads and other good stuff.<br> <br>Here are the pictures of the food.</p>    
+                    
+                    <!--
+                        <div class="container margin-16 leftbar light-gray">
+                        <p><i>"Use products from nature for what it's worth - but never too early, nor too late." Fresh is the new sweet.</i></p>
+                            <p>Chef, Coffeeist and Owner: Liam Brown</p>
+                        </div>
+                        <img src="cafe_image/coffee%20shop%2002.jpg" style="width:100%;max-width:1000px;" class="margin-top-16">
+                    
+                        <p><strong>Opening Hours:</strong>Everyday from 6am to 5pm.</p>
+                        <p><strong>Address:</strong>Oxford Road, No.50</p>
+-->
+                </div>
+                
+            </div>
+        
+            <!--Food pictures-->
+            <div class="content">
+    
+            <!-- Responsive Grid. four columns on laptops, tablets and desktops. Will stack on mobile devices/small screens (width:100%) -->
+                <div class="center">
+            
+                    <div class="col3 m3 row-margin bgimg1 hidden-caption-hover">
+                        <p class="hidden-caption" style="color:#00AC95">English <br>Breakfast<br>£8.80</p>
+                    </div>
+
+                    <div class="col3 m3 row-margin bgimg2 hidden-caption-hover">
+                        <p class="hidden-caption" style="color:#00AC95">Boiled Egg<br>Pancake<br>£6.80</p>
+                    </div>
+
+                    <div class="col3 m3 row-margin bgimg3 hidden-caption-hover">
+                        <p class="hidden-caption" style="color:#F9F2DD">Summer <br>Salad<br>£5.80</p>
+                    </div>
+
+                    <div class="col3 m3 row-margin bgimg4 hidden-caption-hover">
+                        <p class="hidden-caption" style="color:#F9F2DD">Avocado&<br>house sause<br>on Toast<br>£6.80</p>
+                    </div>
+
+                    <div class="col3 m3 row-margin bgimg5 hidden-caption-hover">
+                        <p class="hidden-caption" style="color:#F9F2DD">Avocado <br>on Toast<br>£4.80</p>
+                    </div>
+
+                    <div class="col3 m3 row-margin bgimg6 hidden-caption-hover">
+                        <p class="hidden-caption" style="color:#00AC95">Vegetarian <br>Burger<br>£6.80</p>
+                    </div>
+
+                    <div id="hidden-menuPictures">
+
+                        <div class="col3 m3 row-margin bgimg7 hidden-caption-hover">
+                            <p class="hidden-caption" style="color:#00AC95">Mussel<br>Pasta<br>£8.80</p>
+                        </div>
+
+                        <div class="col3 m3 row-margin bgimg8 hidden-caption-hover">
+                            <p class="hidden-caption" style="color:#00AC95">Beef <br>Pizza<br>£8.80</p>
+                        </div>
+
+                        <div class="col3 m3 row-margin bgimg9 hidden-caption-hover">
+                            <p class="hidden-caption" style="color:#F9F2DD">Roasted Corriander<br>Bacon<br>£8.80</p>
+                        </div>
+                        
+                        <div class="col3 m3 row-margin bgimg10 hidden-caption-hover">
+                            <p class="hidden-caption" style="color:#00AC95">Strawberry<br>Waffle<br>£6.80</p>
+                        </div>
+
+                        <div class="col3 m3 row-margin bgimg11 hidden-caption-hover">
+                            <p class="hidden-caption" style="color:#F9F2DD">Boiled Egg&<br>Spinach <br>on Toast <br>£6.80</p>
+                        </div>
+
+                        <div class="col3 m3 row-margin bgimg12 hidden-caption-hover">
+                            <p class="hidden-caption" style="color:#00AC95">Beef Burger<br>Chips<br>£8.80</p>
+                        </div>
+
+                    </div>
+                </div>
+            
+            </div>
+            
+            <div class="clear"></div>
+            
+            <div class="center" style="padding-top:24px"> 
+                <button  id="buttonLoad" class="button2 black letterspacing-large padding radius transition cursor"  onclick="loadMenuPictures()">LOAD MORE</button>    
+            </div>
+            
+            <!--Menu-->
+            
+            <div id="menu" class="content center" style="max-width:700px">
+                    
+                <h5 class="center padding-64"><span class="tag black center letterspacing-large padding radius">THE MENU</span></h5>
+                <div class="center row card cursor padding" style="height:50px">
+                    <div class="col s6 tablink hover-dark-grey dark-grey tag radius" id="buttonEat" onclick="displayEat()">Eat</div>                        
+                    <div class="col s6 tablink hover-dark-grey tag radius" id="buttonDrink" onclick="displayDrink()">Drink</div>
+                </div>
+                
+                <div id="eat" class="container padding-48 card menu">
+    
+                    <h5>Bread Basket</h5>
+                
+                    <p class="text-grey">Assortment of fresh baked fruit breads and muffins 5.50</p>
+
+                    <h5>Honey Almond Granola with Fruits</h5>
+                    <p class="text-grey">Natural cereal of honey toasted oats, raisins, almonds and dates 7.00</p><br>
+                    <h5>Belgian Waffle</h5>
+                    <p class="text-grey">Vanilla flavored batter with malted flour 7.50</p><br>
+
+                    <h5>Scrambled eggs</h5>
+                    <p class="text-grey">Scrambled eggs, roasted red pepper and garlic, with green onions 7.50</p><br>
+
+                    <h5>Blueberry Pancakes</h5>
+                    <p class="text-grey">With syrup, butter and lots of berries 8.50</p>
+                
+                </div>
+
+                <div id="drink" class="container padding-48 card menu hide">
+                    <h5>Coffee</h5>
+                    <p class="text-grey">Regular coffee 2.50</p><br>
+                    
+                    <h5>Chocolato</h5>
+                    <p class="text-grey">Chocolate espresso with milk 4.50</p><br>
+
+                    <h5>Corretto</h5>
+                    <p class="text-grey">Whiskey and coffee 5.00</p><br>
+
+                    <h5>Iced tea</h5>
+                    <p class="text-grey">Hot tea, except not hot 3.00</p><br>
+
+                    <h5>Soda</h5>
+                    <p class="text-grey">Coke, Sprite, Fanta, etc. 2.50</p>
+                </div>  
+                 
+            </div>
+            
+            <div class="container" id="about">
+                
+                <div class="content" style="max-width:700px">
+                    <a href="https://www.bookatable.co.uk/manchester-restaurants"><h5 class="center padding-48"><span class="tag black center letterspacing-large radius transition cursor button2">BOOK A TABLE</span></h5></a>
+                    <p>Share pictures to get great discount! <br> Have a look of the pictures from other customers.</p>    
+
+                </div>
+                
+            </div>
+    <!--review pictures-->        
+            <div class="padding-24 center2" style="max-width:1100px" >
+                
+                <div>
+                    <img src="cafe_image/cake%2001.jpg"  class="col2 row-margin radius">
+                </div>
+
+                <div>
+                    <img src="cafe_image/cofee%20shop%2008.jpg"  class="col2 row-margin radius">
+                </div>
+
+                <div>
+                    <img src="cafe_image/cake%2002.jpg"  class="col2 row-margin radius">
+                </div>
+
+                <div>
+                    <img src="cafe_image/cake%2003.jpg"  class="col2 row-margin radius">
+                </div>
+
+                <div>
+                    <img src="cafe_image/coffee%20shop%2007.jpg"  class="col2 row-margin radius">
+                </div>
+
+                <div>
+                    <img src="cafe_image/coffee.jpg"  class="col2 row-margin radius">
+                </div>
+
+                
+         
+            </div>     
+            
+        <!--Contact-->
+            <div class="content center" style="max-width:700px;padding:0px 10px 0px 30px">
+                   
+                <div class="content padding-48" id="contact">
+            
+                <!--Add Google Map-->
+                        
+                    <div class="col m4"> 
+                            
+                    <div id="googleMap" class="radius greyscale" style="width:100%;height:300px"></div>
+                            
+                </div>
+                
+                    <div class="col large margin-bottom-16 m8 margin-100">
+                    
+                        <i class="fa fa-phone fa-fw hover-text-black xlarge margin-right"></i>Phone:07376249937<br>
+                        <i class="fa fa-map-marker fa-fw grey hover-text-black xlarge margin-right"></i>Oxford Road, No.50, Manchester, UK <br>
+                        <i class="fa fa-envelope fa-fw hover-text-black xlarge margin-right"></i> Email:judy20160101@outlook.com<br>
+                                            
+                    </div>
+                      
+                </div>
+        
+            </div>
+        
+            <div class="clear"></div>
+        
+            <footer class="center black padding-48 opacity hover-opacity-off margin-70" style="height:200px">
+       
+                <a href="#home" class="button2 radius transition"><i class="fa fa-arrow-up"></i> To the top</a>    
+        
+                <div class="xlarge margin-16">
+
+                    <i class="fa fa-facebook-official hover-opacity"></i>
+                    <i class="fa fa-instagram hover-opacity"></i>
+                    <i class="fa fa-snapchat hover-opacity"></i>
+                    <i class="fa fa-pinterest-p hover-opacity"></i>
+                    <i class="fa fa-twitter hover-opacity"></i>
+                    <i class="fa fa-linkedin hover-opacity"></i>
+
+                </div>
+                
+                <p class="white">Powered by Jia</p>
+        
+            </footer>
+        
+            
+        </div>
+        <script>
+        
+        // Tabbed Menu
+            
+        var buttonDrink = document.getElementById("buttonDrink");
+        var buttonEat = document.getElementById("buttonEat");
+        var drink = document.getElementById("drink");
+        var eat = document.getElementById("eat");
+        var hiddenmenuPictures = document.getElementById("hidden-menuPictures");
+        var buttonLoad = document.getElementById("buttonLoad");  
+           
+        function displayDrink() {
+            
+            drink.style.display = "block";
+            eat.style.display = "none";
+            buttonDrink.style.backgroundColor = "#616161";
+            buttonEat.style.backgroundColor = "#fdf5e6";
+            
+        }    
+            
+        function displayEat() {
+            
+            eat.style.display = "block";
+            drink.style.display = "none";
+            buttonDrink.style.backgroundColor = "#fdf5e6";
+            buttonEat.style.backgroundColor = "#616161";
+
+        }
+        
+        function myMap() {
+              
+            var myCenter = new google.maps.LatLng(53.4363, -2);
+            var mapCanvas = document.getElementById("googleMap");
+            var mapOptions = {center: myCenter, zoom: 5};
+            var map = new google.maps.Map(mapCanvas, mapOptions);
+            var marker = new google.maps.Marker({position:myCenter});
+                marker.setMap(map);
+        }
+          
+        
+          
+        function loadMenuPictures(){ 
+             
+            if (hiddenmenuPictures.style.display == "none") {
+                
+                hiddenmenuPictures.style.display = "block";
+                buttonLoad.innerHTML = "CLOSE";
+            
+            } else {
+                
+                hiddenmenuPictures.style.display = "none";
+                buttonLoad.innerHTML = "LOAD MORE";
+                
+            }        
+        }
+    
+            
+        </script>
+        
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-oVVXWTgjpaTyPrOWDh32VnOqGXQUhE8&callback=myMap"></script>
+        
+        
+    </body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
